@@ -1,0 +1,18 @@
+services:
+    nginx-proxy:
+      build: nginx
+      restart: always
+      volumes:
+        - ./nginx/default.conf:/tmp/default.conf
+      environment:
+        - FLASK_SERVER_ADDR=webapi:8000
+      ports:
+        - "80:80"
+      depends_on:
+        - webapi
+      healthcheck:
+        test: ["CMD-SHELL", "curl --silent --fail localhost:80/status || exit 1"]
+        interval: 10s
+        timeout: 10s
+        retries: 3
+      command: /app/start.sh
