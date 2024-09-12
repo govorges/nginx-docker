@@ -1,0 +1,2 @@
+## nginx-docker
+This is a Docker image built for my OpenBroadcast project. It uses nginx to proxy traffic from the outside world to a Flask API running as a service. In **example-compose.yaml** (not a functioning compose) you can see how it's intended to be implemented within a compose alongside other services.
