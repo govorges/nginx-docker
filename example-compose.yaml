@@ -3,7 +3,7 @@ services:
       build: nginx
       restart: always
       volumes:
-        - ./nginx/default.conf:/tmp/default.conf
+        - ./default.conf:/tmp/default.conf
       environment:
         - FLASK_SERVER_ADDR=webapi:8000
       ports:
