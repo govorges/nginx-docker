@@ -1,6 +1,6 @@
 services:
     nginx-proxy:
-      build: nginx
+      build: .
       restart: always
       volumes:
         - ./default.conf:/tmp/default.conf
