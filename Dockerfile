@@ -5,9 +5,6 @@ RUN apk add bash
 COPY --chown=nginx:nginx nginx.conf /etc/nginx/nginx.conf
 COPY --chown=nginx:nginx start.sh /app/start.sh
 
-COPY --chown=nginx:nginx ssl/site-certificate.pem /etc/ssl/certs/site-certificate.pem
-COPY --chown=nginx:nginx ssl/site-certificate.key /etc/ssl/certs/site-certificate.key
-
 WORKDIR /app
 
 RUN chown -R nginx:nginx /app && chmod -R 755 /app && \
